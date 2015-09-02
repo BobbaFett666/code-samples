@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<templateDesc>Sample Letter</templateDesc>
+	<templateID>SWESVGNSPND0012</templateID>
+
+	<feederSystem>
+		<feederSystemID>GNS</feederSystemID>
+		<feederSystemName>GNS</feederSystemName>
+	</feederSystem>
+
+	<GenericTemplateDetailsGroup> <!-- This section will appear as it is in CUST DATA with name value pair 
+			and if not over-ridden by Specific Implementation example is JURISDICTION -->
+		<TemplateDetails>
+			<TemplateTransactionalDataList>	
+				<transactionalData>
+					<variableName>DOCDEFID</variableName>
+					<variableValue>1955023502</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>PROJECTID</variableName>
+					<variableValue>1955002430</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>BATCHCONFIGID</variableName>
+					<variableValue>1955000422</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>BUSINESSOBJECTID</variableName>
+					<variableValue>1955022533</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>FEEDERSYSID</variableName>
+					<variableValue>GNS</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>TEMPLATEID</variableName>
+					<variableValue>SWESVGNSPND0012</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>CHANNEL</variableName>
+					<variableValue>2</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>JURISDICTION</variableName>
+					<variableValue>XX</variableValue>
+				</transactionalData>
+			</TemplateTransactionalDataList>
+		</TemplateDetails>
+	</GenericTemplateDetailsGroup>
+
+	<SpecificTemplateDetailsGroup>
+		<TemplateDetails>
+			<Language>sv_SE</Language>
+			<CommunicationType>LETTER</CommunicationType>
+			<Active>true</Active>
+			<TemplateTransactionalDataList>
+				<transactionalData>
+					<variableName>DESTINATION</variableName>
+					<variableValue>SROC</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<variableName>JURISDICTION</variableName>
+					<variableValue>XX</variableValue>
+				</transactionalData>
+			</TemplateTransactionalDataList>
+		</TemplateDetails>
+		
+	</SpecificTemplateDetailsGroup>
+
+</template>

@@ -1,0 +1,99 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+	<default-package>com.aexp.gcs.schema.sendcorr</default-package>
+
+	<bean class="NameDetailsType" ignore-annotations="false">
+		<field name="firstName">
+			<constraint annotation="org.hibernate.validator.constraints.NotEmpty">
+				<message>Name is Null</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.WCC</value>
+				</groups>
+			</constraint>
+		</field>
+		<field name="lastName">
+			<constraint annotation="org.hibernate.validator.constraints.NotEmpty">
+				<message>Last Name is Null</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0001</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0002</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0003</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0004</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0005</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0006</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0007</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0008</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0009</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0010</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0011</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0012</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0013</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0014</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0015</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0016</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0017</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0018</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0019</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0020</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0021</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0022</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0023</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0024</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0025</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0026</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0027</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0028</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0029</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0030</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0031</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0032</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0033</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0034</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0035</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0036</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0037</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0038</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0039</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0040</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0041</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0042</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0043</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0044</value>
+					<value>com.aexp.gcs.poa.validate.template.ESPESWCCCNS0045</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0001</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0002</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0003</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0004</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0005</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0006</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0007</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0008</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0009</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0010</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0011</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0012</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0013</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0014</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0015</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0016</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0017</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0018</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0019</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0020</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0021</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0022</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0023</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0024</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0025</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0026</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0027</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0028</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0029</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0030</value>
+					<value>com.aexp.gcs.poa.validate.template.AUTDEWCCCNS0031</value>
+				</groups>
+			</constraint>
+		</field>
+	</bean>
+</constraint-mappings>

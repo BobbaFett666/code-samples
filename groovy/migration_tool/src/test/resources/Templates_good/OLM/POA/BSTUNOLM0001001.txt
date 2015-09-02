@@ -1,0 +1,26 @@
+Potential input Variables 
+------------------------------- 
+CommunRcpnt1stNm
+EtxTrkURL2
+CommunRcpntLegalEnt
+CommunRcpntEmailAddrTxt
+CommunRtrvId
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunActTypeCd:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+CardEndingDigits:com.americanexpress.commutil.validator.NumValidator
+EmailSubject:com.americanexpress.commutil.validator.LanguageSubjectLineValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+AcctNumber:com.americanexpress.commutil.validator.BasicValidator
+Email_Rel_Id:com.americanexpress.commutil.validator.SetValueOfOneFieldAsDefaultForAnother
+CommunRcpntLegalEnt:com.americanexpress.commutil.formatter.MccyCountryCodeFormatter
+DocDefId:com.americanexpress.commutil.validator.BasicValidator
+BusinessObjectId:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpnt1stNm:com.americanexpress.commutil.validator.CustNameConcatenateValidator
+CommunRcpntLstNm:com.americanexpress.commutil.validator.BasicValidator

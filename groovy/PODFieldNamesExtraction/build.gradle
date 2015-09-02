@@ -1,0 +1,60 @@
+description = "This SpringBoot app traverses through all the POD XML template files and extracts the name of all the fields, db Column Names and templates they are referenced in order to have them mapped into the corresponding POA equivalents"
+
+buildscript {
+	repositories {
+		mavenLocal()
+//		maven { url 'http://repo.spring.io/libs-release' }
+		mavenCentral()
+		jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+	}
+}
+
+apply plugin: 'application'
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+
+defaultTasks 'clean', 'assemble'
+
+mainClassName = 'com.aexp.gcs.pod.tools.fieldextraction.Application'
+
+ext {
+	sourceDir = 'src/main/groovy'
+	testSourceDir = 'src/test/groovy'
+}
+
+jar {
+	baseName = 'PODFieldNamesExtraction'
+	version = '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenLocal()
+//	maven { url 'http://repo.spring.io/libs-release' }
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter:1.2.3.RELEASE'
+	compile 'org.codehaus.groovy:groovy-all:2.4.0'
+	compile 'org.slf4j:slf4j-api:1.7.7'
+	
+	testCompile 'org.springframework.boot:spring-boot-starter-test:1.2.3.RELEASE'
+	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+	testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+	testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+	main {
+		java.srcDirs = []
+		groovy.srcDirs = [sourceDir]
+	}
+	test {
+		java.srcDirs = []
+		groovy.srcDirs = [testSourceDir]
+	}
+}
+

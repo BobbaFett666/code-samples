@@ -1,0 +1,26 @@
+Potential input Variables 
+------------------------------- 
+Environment
+CommunRtrvId
+Image
+OffrLink1
+OffrLink2
+PresURL
+
+
+Following are the Rules 
+------------------------------- 
+CommunLangDesc:com.americanexpress.commutil.validator.LanguageValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+CMAccountNumber:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+CardEndingDigits:com.americanexpress.commutil.validator.NumValidator
+LetterRecipientName:com.americanexpress.commutil.validator.BasicValidator
+Axiomkey:com.americanexpress.commutil.validator.ALEAxiomKeyValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+AccountEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+PUKey:com.americanexpress.commutil.validator.EnhancedPUKeyValidator

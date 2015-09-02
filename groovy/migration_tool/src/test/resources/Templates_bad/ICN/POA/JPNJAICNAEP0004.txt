@@ -1,0 +1,21 @@
+Potential input Variables 
+------------------------------- 
+CardEndingDigits
+
+
+Following are the Rules 
+------------------------------- 
+AlrtPymtDueDate:com.americanexpress.commutil.validator.JapaneseDateValidator
+AlrtPymtDueDate:com.americanexpress.commutil.validator.TodayValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+Axiomkey:com.americanexpress.commutil.validator.ALEAxiomKeyValidator
+CMName:com.americanexpress.commutil.formatter.CustNameFormatter
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+FooterYear:com.americanexpress.commutil.validator.BasicValidator
+CardEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator

@@ -1,0 +1,32 @@
+Potential input Variables 
+------------------------------- 
+CommunRcpntFullNm
+EvntCntToDt
+CalcVlAmt
+EvntThrshldCnt
+CommunRtrvId
+EvntCntAsOfDt
+PromoPrdEnddt
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.ActiveDateValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+CommunReqSystemId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+CardEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+EvntCntToDt:com.americanexpress.commutil.validator.BasicValidator
+CalcVlAmt:com.americanexpress.commutil.validator.BasicValidator
+EvntThrshldCnt:com.americanexpress.commutil.validator.BasicValidator
+EvntCntAsOfDt:com.americanexpress.commutil.validator.BasicValidator
+PromoPrdEnddt:com.americanexpress.commutil.validator.BasicValidator
+ProductName:com.americanexpress.commutil.validator.CardArtNameValidator
+RelationShipType:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+EmailCopyrightYear:com.americanexpress.commutil.validator.SystemDateValidator 

@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+		<groupId>com.aexp.gcs</groupId>
+		<artifactId>gcs-poa-parent</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+	</parent>
+
+  <artifactId>business-rules</artifactId>
+  <packaging>jar</packaging>
+  <name>GcsPoaBusinessRules</name>
+  <dependencies>
+	<dependency>
+		<groupId>${project.groupId}</groupId>
+		<artifactId>rule-interface</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>${project.groupId}</groupId>
+		<artifactId>object-model</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>${project.groupId}</groupId>
+		<artifactId>template-transaction-info</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>${project.groupId}</groupId>
+		<artifactId>business-rules-gna</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>${project.groupId}</groupId>
+		<artifactId>business-rules-wcc</artifactId>
+	</dependency>
+  </dependencies>
+  <build>
+  	<plugins>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-jar-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <goals>
+		                <goal>test-jar</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+		</plugin>
+  	</plugins>
+  </build>
+</project>

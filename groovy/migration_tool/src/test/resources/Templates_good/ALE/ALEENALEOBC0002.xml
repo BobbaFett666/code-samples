@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LetterInfo xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='LetterDefinition.xsd'>
+	<Letter>
+		<ReturnToReq>N</ReturnToReq>
+		<LetterDesc>Mint Balance Update</LetterDesc>
+		<ProductId />
+		<IsActive>Y</IsActive>
+	</Letter>
+	<FieldGroup>
+		<FieldGrpNm>AUTO</FieldGrpNm>
+		<Field>
+			<FieldNm>CommunLangDesc</FieldNm>
+			<FieldVal>en_US</FieldVal>
+			<FieldDesc>Language</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>LANGUAGE</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>ReqCommunId</FieldNm>
+			<FieldVal>ALEENALEOBC0002</FieldVal>
+			<FieldDesc>Unique template identifier</FieldDesc>
+			<FieldLen>15</FieldLen>
+			<FieldTyp>Alphanumeric</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>TEMPLATEID</DBColNm>
+		</Field>
+
+		<Field>
+			<FieldNm>CommunReqSystemId</FieldNm>
+			<FieldVal>ALE</FieldVal>
+			<FieldDesc>SysId</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>FEEDERSYSID</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>CommunRtrvId</FieldNm>
+			<FieldDesc>Commun Retrieve ID</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>EMAILCOMMID</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>CommunDestLocCd</FieldNm>
+			<FieldVal>EMAN</FieldVal>
+			<FieldDesc>Destination</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>DESTINATION</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>CommunRcpntEmailAddrTxt</FieldNm>
+			<FieldDesc>Email Address</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<EnhVldtn>EDOMAIN</EnhVldtn>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>EMAILADDRESS</DBColNm>
+		</Field>
+
+		<Field>
+			<FieldNm>PRODUCT</FieldNm>
+			<FieldVal>THUNDER</FieldVal>
+			<FieldDesc>Product</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+		</Field>
+		<Field>
+			<FieldNm>JOBNAME</FieldNm>
+			<FieldVal>AGEDALE</FieldVal>
+			<FieldDesc>Jobname</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+		</Field>
+		<Field>
+			<FieldNm>ASSEMBLY_ACTION</FieldNm>
+			<FieldVal>NI</FieldVal>
+			<FieldDesc>Assembly action</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+		</Field>
+		<Field>
+			<FieldNm>OUTPUT_FORMAT</FieldNm>
+			<FieldVal>PUBLISH</FieldVal>
+			<FieldDesc>Output Format</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+		</Field>
+		<Field>
+			<FieldNm>REPRINT_DATE</FieldNm>
+			<FieldVal>2006-12-31</FieldVal>
+			<FieldDesc>Reprint Date</FieldDesc>
+		</Field>
+		<Field>
+			<FieldNm>COPIES</FieldNm>
+			<FieldVal>1</FieldVal>
+			<FieldDesc>Copies</FieldDesc>
+		</Field>
+		<Field>
+			<FieldNm>AG_FILE_IND</FieldNm>
+			<FieldVal>C</FieldVal>
+			<FieldDesc>Layout Indicator</FieldDesc>
+		</Field>
+		<Field>
+			<FieldNm>RelationShipId</FieldNm>
+			<FieldDesc>Relationship ID</FieldDesc>
+			<DBColNm>ACCOUNTNUMBER</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>AccountNumber</FieldNm>
+			<FieldVal>XXXXX</FieldVal>
+			<FieldDesc>AccountEndingDigits</FieldDesc>
+			<FieldFmt></FieldFmt>
+			<FieldVldtn></FieldVldtn>
+			<EnhVldtn>CUSTACCTEND</EnhVldtn>
+			<DBColNm>ACCTENDDIGITS</DBColNm>
+			<ExtraInfo>
+				<FieldNm>DefaultValue</FieldNm>
+				<FieldVal>RelationShipId</FieldVal>
+			</ExtraInfo>
+			<ExtraInfo>
+				<FieldNm>DefaultValue</FieldNm>
+				<FieldVal>15</FieldVal>
+			</ExtraInfo>
+		</Field>
+		<Field>
+			<FieldNm>CardEndingDigits</FieldNm>
+			<FieldVal>XXXXX</FieldVal>
+			<FieldDesc>CardEndingDigits</FieldDesc>
+			<FieldFmt></FieldFmt>
+			<FieldVldtn></FieldVldtn>
+			<EnhVldtn>CUSTACCTEND</EnhVldtn>
+			<DBColNm>ACCTNUM1</DBColNm>
+			<ExtraInfo>
+				<FieldNm>DefaultValue</FieldNm>
+				<FieldVal>RelationShipId</FieldVal>
+			</ExtraInfo>
+			<ExtraInfo>
+				<FieldNm>DefaultValue</FieldNm>
+				<FieldVal>15</FieldVal>
+			</ExtraInfo>
+		</Field>
+		<Field>
+			<FieldNm>SecurityZoneCode</FieldNm>
+			<FieldVal>5</FieldVal>
+			<FieldDesc>Security Zone Code</FieldDesc>
+			<DBColNm>SECZONECODE</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>FirstName</FieldNm>
+			<FieldDesc>Customer Name</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>FIRSTNAME</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>LastName</FieldNm>
+			<FieldDesc>Customer Name</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>LASTNAME</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>Month</FieldNm>
+			<FieldDesc>Month</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>INSERT6</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>RelationShipType</FieldNm>
+			<FieldVal>1001</FieldVal>
+			<FieldDesc>Relationship Type</FieldDesc>
+			<FieldTyp>INT</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<DBColNm>EMAILRELTYPECD</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>AlrtProdDesc</FieldNm>
+			<FieldDesc>Product Description</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+		</Field>
+		<Field>
+			<FieldNm>EmailType</FieldNm>
+			<FieldVal>E</FieldVal>
+			<FieldDesc>Type</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>EMAILTYPECD</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EM_RETCODE</FieldNm>
+			<FieldVal>8.5.0.4</FieldVal>
+			<FieldDesc>Return Code</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>EMAILRETURNCD</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EmailSubject</FieldNm>
+			<FieldVal>Appointment with your OPEN Business Card Advisor</FieldVal>
+			<FieldDesc>Subject line</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>EMAILSUBJECT</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>APP_CODE</FieldNm>
+			<FieldVal>ENG-ALERTS</FieldVal>
+			<FieldDesc>Application Code</FieldDesc>
+			<DBColNm>APPCODE</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>SUB_APP_CODE</FieldNm>
+			<FieldVal>BLANK</FieldVal>
+			<FieldDesc>Sub Application Code</FieldDesc>
+			<DBColNm>SUBAPPCODE</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>ImageURL</FieldNm>
+			<FieldDesc>Image URL</FieldDesc>
+			<FieldVal>www208.americanexpress.com/axp</FieldVal>
+			<DBColNm>IMAGEURL</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>Image</FieldNm>
+			<FieldDesc>Image</FieldDesc>
+			<FieldVal>img_bluebox.jpg</FieldVal>
+			<DBColNm>INSERT1</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>CardType</FieldNm>
+			<FieldDesc>Card Type</FieldDesc>
+			<DBColNm>CODE7</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EMCopyrightYear</FieldNm>
+			<FieldVal>2012</FieldVal>
+			<FieldDesc>Coyright Year</FieldDesc>
+			<DBColNm>INSERT9</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EMAIL_ROLE</FieldNm>
+			<FieldVal>1</FieldVal>
+			<FieldDesc>Email Role</FieldDesc>
+			<FieldTyp>INT</FieldTyp>
+			<DBColNm>EMAILROLECD</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>Date</FieldNm>
+			<FieldTyp>CHAR</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>REFERENCE2</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>TimeZone</FieldNm>
+			<FieldDesc>TimeZone</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>AMOUNT26</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>Time</FieldNm>
+			<FieldDesc>Time</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>INSERT10</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>SpecialistFirstName</FieldNm>
+			<FieldDesc>RFName</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>AMOUNT27</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>SpecialistLastName</FieldNm>
+			<FieldDesc>RLName</FieldDesc>
+			<IsMandatory>Y</IsMandatory>
+			<DBColNm>AMOUNT28</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>OSBNStatus</FieldNm>
+			<FieldVal>N</FieldVal>
+			<FieldDesc>OSBNStatus</FieldDesc>
+			<DBColNm>SWITCH7</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EMAIL_PURPOSE</FieldNm>
+			<FieldVal>30</FieldVal>
+			<FieldDesc>Purpose</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>EMAILPURPOSE</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EmailSender</FieldNm>
+			<FieldVal><![CDATA[American Express <alerts@service.americanexpress.com>  ]]></FieldVal>
+			<FieldDesc>Email Sender</FieldDesc>
+			<DBColNm>EMAILSENDER</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EM_FORMAT</FieldNm>
+			<FieldVal>HTML</FieldVal>
+			<FieldDesc>Email Format</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<DBColNm>EMAILFORMAT</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>GROUP_ID</FieldNm>
+			<FieldVal>1</FieldVal>
+			<DBColNm>GROUPID</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>GROUP_SEQ</FieldNm>
+			<FieldVal>0</FieldVal>
+			<FieldTyp>INT</FieldTyp>
+			<DBColNm>BATCHNUMBER</DBColNm>
+		</Field>
+
+		<Field>
+			<FieldNm>AxiomKey</FieldNm>
+			<FieldDesc>Axiom Key</FieldDesc>
+			<FieldTyp>CHAR</FieldTyp>
+			<FieldVldtn>BASIC</FieldVldtn>
+			<DBColNm>AXIOMKEY</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>EMAIL_ENCD_TX</FieldNm>
+			<FieldVal>UTF-8</FieldVal>
+			<DBColNm>EMAILENCODING</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>SCHEMA</FieldNm>
+			<FieldVal>Generic</FieldVal>
+			<FieldDesc>Schema Type</FieldDesc>
+		</Field>
+		<Field>
+			<FieldNm>Channel</FieldNm>
+			<FieldVal>1</FieldVal>
+			<FieldDesc>Email Template</FieldDesc>
+			<DBColNm>CHANNEL</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>DocDefId</FieldNm>
+			<FieldVal>1955009464</FieldVal>
+			<FieldDesc>DocDefId</FieldDesc>
+			<DBColNm>DOCDEFID</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>BusinessObjectId</FieldNm>
+			<FieldVal>1955000111</FieldVal>
+			<FieldDesc>BO id</FieldDesc>
+			<DBColNm>BUSINESSOBJECTID</DBColNm>
+		</Field>
+		<Field>
+			<FieldNm>ProjectId</FieldNm>
+			<FieldVal>0</FieldVal>
+			<FieldTyp>INT</FieldTyp>
+			<FieldDesc>Project Id</FieldDesc>
+		</Field>
+	</FieldGroup>
+</LetterInfo>

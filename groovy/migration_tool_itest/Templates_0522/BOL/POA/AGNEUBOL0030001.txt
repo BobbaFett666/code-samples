@@ -1,0 +1,105 @@
+Potential input Variables 
+------------------------------- 
+CommunRcpntAddrLineTxt1
+CommunRcpntAddrLineTxt2
+CommunRcpntAddrLineTxt3
+CommunRcpntAddrCityNm
+CommunRcpntAddrStateCd
+CommunRcpntAddrPostCd
+CommunRcpntFullNm
+RelationShipId
+CommunReqSystemId
+TODAY
+
+
+Following are the Rules 
+------------------------------- 
+CommunDestLocCd--body.request.communicationInformation.deliveryInformation.destinationCode--Mandatory
+CommunDestLocCd--body.request.communicationInformation.deliveryInformation.destinationCode--Max Length Constraint :4
+CommunDestLocCd--body.request.communicationInformation.deliveryInformation.destinationCode--Default Value :SROC
+CommunReqDt--body.request.communicationInformation.requestDate--com.americanexpress.commutil.formatter.EffDateFormatter
+CommunLangDesc--body.request.communicationInformation.customerPII.preferredLanguageCode--com.americanexpress.commutil.validator.LanguageValidator
+CommunRcpntFullNm--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.nameDetails.fullName--Mandatory
+CommunRcpntFullNm--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.nameDetails.fullName--com.americanexpress.commutil.formatter.CustNameFormatter
+CommunRcpntAddrLineTxt1--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.addressLine--Mandatory
+CommunRcpntAddrLineTxt1--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.addressLine--Max Length Constraint :40
+CommunRcpntAddrLineTxt1--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.addressLine--com.americanexpress.commutil.formatter.ScottishIrishFormatter
+CommunRcpntAddrLineTxt2--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.addressLine--com.americanexpress.commutil.formatter.ScottishIrishFormatter
+CommunRcpntAddrLineTxt3--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.addressLine--com.americanexpress.commutil.formatter.ScottishIrishFormatter
+CommunRcpntAddrCityNm--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.city--Mandatory
+CommunRcpntAddrCityNm--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.city--Max Length Constraint :20
+CommunRcpntAddrCityNm--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.city--com.americanexpress.commutil.formatter.ScottishIrishFormatter
+CommunRcpntAddrStateCd--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.stateCode--Max Length Constraint :3
+CommunRcpntAddrStateCd--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.stateCode--com.americanexpress.commutil.formatter.UpperCaseFormatter
+CommunRcpntAddrPostCd--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.postalCode--Max Length Constraint :20
+CommunRcpntAddrCtryCd--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.countryName--com.americanexpress.commutil.formatter.UpperCaseFormatter
+RelationShipId--body.request.communicationInformation.communicationVariables.variable--com.americanexpress.commutil.validator.RelationshipIdValidator
+RelationShipId--body.request.communicationInformation.communicationVariables.variable--Mandatory
+RelationShipId--body.request.communicationInformation.communicationVariables.variable--com.americanexpress.commutil.formatter.ECRAccountEndingDigitsFormatter
+TODAY--body.request.communicationInformation.communicationVariables.variable--com.americanexpress.commutil.validator.TodayValidator -- Formatter -- CMPLTDATE
+CommunRtrvId--body.request.communicationInformation.communicationTrackingID--Mandatory
+
+ Json Output 
+------------------ 
+{
+  "lob" : "BOL",
+  "feeder" : "BOL",
+  "template" : "AGNEUBOL0030001",
+  "variables" : [ {
+    "mapping" : "body.request.communicationInformation.deliveryInformation.destinationCode",
+    "className" : "com.aexp.gcs.schema.sendcorr.DeliveryInformationType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.requestDate",
+    "className" : "com.aexp.gcs.schema.sendcorr.CommunicationInformationType",
+    "validations" : [ {
+      "elements" : { }
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.customerPII.preferredLanguageCode",
+    "className" : "com.aexp.gcs.schema.sendcorr.CommunicationInformationType",
+    "validations" : [ {
+      "elements" : { }
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.nameDetails.fullName",
+    "className" : "com.aexp.gcs.schema.sendcorr.NameDetailsType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.addressLine",
+    "className" : "com.aexp.gcs.schema.sendcorr.PhysicalAddressType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.physicalAddress.city",
+    "className" : "com.aexp.gcs.schema.sendcorr.PhysicalAddressType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.communicationVariables.variable",
+    "className" : "com.aexp.gcs.schema.sendcorr.VariableType",
+    "validations" : [ {
+      "elements" : { }
+    }, {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.communicationVariables.variable",
+    "className" : "com.aexp.gcs.schema.sendcorr.VariableType",
+    "validations" : [ {
+      "elements" : { }
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.communicationTrackingID",
+    "className" : "com.aexp.gcs.schema.sendcorr.CommunicationInformationType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  } ]
+}

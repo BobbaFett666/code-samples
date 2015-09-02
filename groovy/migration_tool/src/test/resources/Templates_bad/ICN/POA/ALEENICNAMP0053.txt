@@ -1,0 +1,30 @@
+Potential input Variables 
+------------------------------- 
+CMName
+TotDue
+RSVPCd
+CommunRtrvId
+Image
+RSVPExpDt
+
+
+Following are the Rules 
+------------------------------- 
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+RSVPCd:null
+TotDue:com.americanexpress.commutil.validator.BasicValidator
+TotDue:com.americanexpress.commutil.formatter.AmountFormatter
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+Axiomkey:com.americanexpress.commutil.validator.ALEAxiomKeyValidator
+CMName:com.americanexpress.commutil.validator.BasicValidator
+CMName:com.americanexpress.commutil.formatter.CustNameFormatter
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+AccountEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+TxnDate:com.americanexpress.commutil.validator.BasicValidator
+TxnDate:null
+TxnAmount:com.americanexpress.commutil.validator.BasicValidator
+TxnAmount:com.americanexpress.commutil.formatter.AmountFormatter

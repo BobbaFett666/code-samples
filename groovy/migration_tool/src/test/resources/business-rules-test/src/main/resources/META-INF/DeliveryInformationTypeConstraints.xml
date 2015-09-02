@@ -1,0 +1,17 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+	<default-package>com.aexp.gcs.schema.sendcorr</default-package>
+	
+	 <bean class="DeliveryInformationType" ignore-annotations="false">
+		<field name="deliverMethod">
+			<constraint annotation="javax.validation.constraints.NotNull">
+				<message>Invalid deliverMethod</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.GNS</value>
+					<value>com.aexp.gcs.poa.validate.feeder.WCC</value>
+				</groups>
+			</constraint>
+		</field>		
+	</bean>
+</constraint-mappings>

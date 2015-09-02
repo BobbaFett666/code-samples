@@ -1,0 +1,20 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+	<default-package>com.aexp.gcs.schema.sendcorr</default-package>
+	
+	<bean class="FeederDetailsType" ignore-annotations="false">
+ 
+		<field name="feederSystemID">
+			<constraint annotation="com.aexp.gcs.poa.custom.constraint.ValidateServiceDetails">
+				<message>Invalid Feeder System ID</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.base.ServiceValidation</value>
+				</groups>
+				<element name="packageName">com.aexp.gcs.poa.validate.feeder</element>
+			</constraint>
+		</field>
+		
+	</bean>
+
+</constraint-mappings>

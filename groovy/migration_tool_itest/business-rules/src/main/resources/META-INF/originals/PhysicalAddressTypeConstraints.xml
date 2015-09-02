@@ -1,0 +1,41 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+	<default-package>com.aexp.gcs.schema.sendcorr</default-package>
+
+	<bean class="PhysicalAddressType" ignore-annotations="false">
+		<field name="addressLine">
+			<constraint annotation="javax.validation.constraints.NotNull">
+				<message>Invalid Address</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.GNS</value>
+					<value>com.aexp.gcs.poa.validate.template.ABCABCXY0001001</value>
+					<value>com.aexp.gcs.poa.validate.feeder.WCC</value>
+				</groups>
+			</constraint>
+			<constraint annotation="javax.validation.constraints.Size">
+				<message>addressLine is empty</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.WCC</value>
+				</groups>
+				<element name="min">2</element>
+			</constraint>
+			<constraint annotation="javax.validation.constraints.Size">
+				<message>addressLine is empty</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.GNS</value>
+				</groups>
+				<element name="min">1</element>
+			</constraint>
+			<constraint annotation="com.aexp.gcs.poa.custom.constraint.AddressLinesNotEmpty">
+				<message>Required Number of Address Lines are blank</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.WCC</value>
+					<value>com.aexp.gcs.poa.validate.feeder.GNS</value>
+				</groups>
+				<element name="maxLinesToValidate">1</element>
+			</constraint>
+		</field>
+	</bean>
+
+</constraint-mappings>

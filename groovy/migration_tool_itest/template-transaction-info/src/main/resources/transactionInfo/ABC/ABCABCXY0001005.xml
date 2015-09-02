@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<feederSystem>
+		<feederSystemID>ABC</feederSystemID>
+		<feederSystemName>ABC</feederSystemName>
+	</feederSystem>
+	<templateID>ABCABCXY0001005</templateID>
+	<GenericTemplateDetailsGroup>
+		<SmcTriggeredTemplate>ABCABCXY0001006</SmcTriggeredTemplate>
+		<TemplateDetails>
+			<TemplateTransactionalDataList>
+				<transactionalData>
+					<transactionDataID>1</transactionDataID>
+					<variableName>DOCDEFID</variableName>
+					<variableValue>12341234</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<transactionDataID>2</transactionDataID>
+					<variableName>PROJECTID</variableName>
+					<variableValue>195200120</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<transactionDataID>3</transactionDataID>
+					<variableName>BATCHCONFIGID</variableName>
+					<variableValue>123123123</variableValue>
+				</transactionalData>
+				<transactionalData>
+					<transactionDataID>4</transactionDataID>
+					<variableName>DESTINATION</variableName>
+					<variableValue>EMAI</variableValue>
+				</transactionalData>
+			</TemplateTransactionalDataList>
+		</TemplateDetails>
+	</GenericTemplateDetailsGroup>
+	<SpecificTemplateDetailsGroup>
+		<TemplateDetails>
+			<Language>en_US</Language>
+			<CommunicationType>EMAIL</CommunicationType>
+			<Active>true</Active>
+		</TemplateDetails>
+	</SpecificTemplateDetailsGroup>
+</template>

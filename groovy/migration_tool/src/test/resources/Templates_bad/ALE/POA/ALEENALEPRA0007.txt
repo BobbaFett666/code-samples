@@ -1,0 +1,34 @@
+Potential input Variables 
+------------------------------- 
+CMName
+AlrtPymtRcdAmt
+PaymentType
+CommunRtrvId
+AlrtTrigrProcTime
+PymtRcvdDt
+DateType
+AlrtProdDesc
+
+
+Following are the Rules 
+------------------------------- 
+CommunLangDesc:com.americanexpress.commutil.validator.LanguageValidator
+DateType:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+AlrtPymtRcdAmt:com.americanexpress.commutil.formatter.DollarAmountFormatter
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+CardEndingDigits:com.americanexpress.commutil.validator.NumValidator
+AlrtProdDesc:com.americanexpress.commutil.validator.BasicValidator
+PymtRcvdDt:com.americanexpress.commutil.formatter.FSLDateFormatter
+EmailSubject:com.americanexpress.commutil.validator.ALESubjectLineValidator
+PaymentType:com.americanexpress.commutil.validator.BasicValidator
+Axiomkey:com.americanexpress.commutil.validator.ALEAxiomKeyValidator
+CSATSurveySwitch:com.americanexpress.commutil.validator.CSATValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+AccountEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+PUKey:com.americanexpress.commutil.validator.EnhancedPUKeyValidator

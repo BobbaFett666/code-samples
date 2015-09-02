@@ -1,0 +1,23 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+	<default-package>com.aexp.gcs.schema.sendcorr</default-package>
+	
+	<bean class="BodyType" ignore-annotations="false">
+		<field name="request">
+			<constraint annotation="com.aexp.gcs.poa.validate.ValidTemplateInEnvelope">
+				<groups>
+					<value>javax.validation.groups.Default</value>
+				</groups>
+			</constraint>
+			<constraint annotation="com.aexp.gcs.poa.validate.ValidTimeToDelivery">
+				<groups>
+					<value>javax.validation.groups.Default</value>
+				</groups>
+			</constraint>
+		</field>
+	</bean>
+
+	
+
+</constraint-mappings>

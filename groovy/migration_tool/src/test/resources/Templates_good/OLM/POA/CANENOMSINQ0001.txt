@@ -1,0 +1,22 @@
+Potential input Variables 
+------------------------------- 
+NAME
+CommunRcpntEmailAddrTxt
+InquiryCnt
+
+
+Following are the Rules 
+------------------------------- 
+CommunReqSystemId:com.americanexpress.commutil.validator.BasicValidator
+ReqBtchNbr:com.americanexpress.commutil.validator.BasicValidator
+EM_COMMID:com.americanexpress.commutil.validator.BasicValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+NAME:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+CommunLangDesc:com.americanexpress.commutil.validator.BasicValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+Channel:com.americanexpress.commutil.validator.BasicValidator
+DocDefId:com.americanexpress.commutil.validator.BasicValidator
+BusinessObjectId:com.americanexpress.commutil.validator.BasicValidator

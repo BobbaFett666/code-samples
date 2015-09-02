@@ -1,0 +1,22 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+	<default-package>com.aexp.gcs.schema.sendcorr</default-package>
+	
+	 <bean class="CustomerPIIType" ignore-annotations="false">
+		<field name="relationShipID">
+			<constraint annotation="org.hibernate.validator.constraints.NotEmpty">
+				<message>RelationshipId is empty</message>
+				<groups>
+					<value>com.aexp.gcs.poa.validate.feeder.WCC</value>
+					<value>com.aexp.gcs.poa.validate.feeder.GNS</value>
+					<value>com.aexp.gcs.poa.validate.feeder.ALE</value>
+					<value>com.aexp.gcs.poa.validate.feeder.AEM</value>
+					<value>com.aexp.gcs.poa.validate.feeder.ECR</value>
+					<value>com.aexp.gcs.poa.validate.feeder.EGL</value>
+					<value>com.aexp.gcs.poa.validate.feeder.AMR</value>
+				</groups>
+			</constraint>
+		</field>
+	</bean>
+</constraint-mappings>

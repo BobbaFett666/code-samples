@@ -1,0 +1,24 @@
+Potential input Variables 
+------------------------------- 
+FirstName
+LastName
+TimeZone
+SpecialistFirstName
+SpecialistLastName
+Time
+Month
+Date
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+AccountNumber:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+CardEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+RelationShipType:com.americanexpress.commutil.validator.BasicValidator
+Date:com.americanexpress.commutil.validator.BasicValidator
+AxiomKey:com.americanexpress.commutil.validator.BasicValidator

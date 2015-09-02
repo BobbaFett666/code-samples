@@ -1,0 +1,34 @@
+Potential input Variables 
+------------------------------- 
+RelationShipId
+Amount
+DateSubmitted
+RejectedDate
+OriginatorFullName
+To
+RejectedReason
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.ActiveDateValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+CommunReqSystemId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CardMemberName:com.americanexpress.commutil.validator.BasicValidator
+CardMemberName:com.americanexpress.commutil.formatter.CustNameFormatter
+DeviceAddr:com.americanexpress.commutil.validator.BasicValidator
+AxiomKey:com.americanexpress.commutil.validator.GenericAxiomKeyValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+OriginatorFullName:com.americanexpress.commutil.validator.BasicValidator
+DateSubmitted:com.americanexpress.commutil.validator.BasicValidator
+Amount:com.americanexpress.commutil.validator.BasicValidator
+To:com.americanexpress.commutil.validator.BasicValidator
+RejectedDate:com.americanexpress.commutil.validator.BasicValidator
+RejectedReason:com.americanexpress.commutil.validator.BasicValidator

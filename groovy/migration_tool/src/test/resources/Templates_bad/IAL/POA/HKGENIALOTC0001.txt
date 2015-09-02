@@ -1,0 +1,16 @@
+Potential input Variables 
+------------------------------- 
+CardEndingDigits
+ExpiryDt
+
+
+Following are the Rules 
+------------------------------- 
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+Axiomkey:com.americanexpress.commutil.validator.ALEAxiomKeyValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CardEndingDigits:com.americanexpress.commutil.validator.NumValidator

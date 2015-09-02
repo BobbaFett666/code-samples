@@ -1,0 +1,14 @@
+Potential input Variables 
+------------------------------- 
+CommunRtrvId
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+Axiomkey:com.americanexpress.commutil.validator.OETAxiomKeyValidator

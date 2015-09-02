@@ -1,0 +1,28 @@
+Potential input Variables 
+------------------------------- 
+CommunRcpntAddrLineTxt1
+CommunRcpntAddrLineTxt2
+CommunRcpntAddrLineTxt3
+CommunRcpntAddrLineTxt4
+CommunRcpntAddrLineTxt5
+CommunRcpntAddrLineTxt6
+VSAMKEY
+ReqCommunId
+TodayDate
+
+
+Following are the Rules 
+------------------------------- 
+CommunLangDesc:com.americanexpress.commutil.validator.WEMLanguageValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.ActiveDateValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+TodayDate:com.americanexpress.commutil.validator.TodayValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+Salutation:com.americanexpress.commutil.validator.BasicValidator
+Salutation:com.americanexpress.commutil.formatter.CustNameFormatter
+Axiomkey:com.americanexpress.commutil.validator.OETAxiomKeyValidator

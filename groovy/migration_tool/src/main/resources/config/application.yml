@@ -1,0 +1,8 @@
+spring:
+   application:
+      sourceFolder: C:/development/projects/migration_tool_itest/Templates_0522
+      baseOutputFolder: C:/development/projects/migration_tool_itest/Migration
+      templateTransactionInfo: C:/development/projects/migration_tool_itest/template-transaction-info
+      objectModelLocation: C:/development/examples/object-model
+      validationMessagesFile: C:/development/projects/migration_tool_itest/ValidationMessages.properties
+      beanConstraintsFolder: C:/development/projects/migration_tool_itest/business-rules/src/main/resources/META-INF

@@ -1,0 +1,89 @@
+Potential input Variables 
+------------------------------- 
+RelationShipId
+Amount
+DateSubmitted
+RejectedDate
+OriginatorFullName
+To
+RejectedReason
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId--body.request.communicationInformation.templateID--Mandatory
+ReqCommunId--body.request.communicationInformation.templateID--Max Length Constraint :15
+ReqCommunId--body.request.communicationInformation.templateID--Default Value :BOLENBOLBBD0002
+CommunDestLocCd--body.request.communicationInformation.deliveryInformation.destinationCode--Mandatory
+CommunDestLocCd--body.request.communicationInformation.deliveryInformation.destinationCode--Default Value :EMAN
+CommunReqDt--body.request.communicationInformation.requestDate--Mandatory
+CommunReqDt--body.request.communicationInformation.requestDate--com.americanexpress.commutil.formatter.EffDateFormatter
+CommunReqSystemId--body.request.feederDetails.feederSystemID--Mandatory
+CommunReqSystemId--body.request.feederDetails.feederSystemID--Default Value :BOL
+CommunRtrvId--body.request.communicationInformation.communicationTrackingID--Mandatory
+CardMemberName--body.request.communicationInformation.communicationVariables.variable--com.americanexpress.commutil.formatter.CustNameFormatter
+AxiomKey--body.request.communicationInformation.communicationVariables.variable--com.americanexpress.commutil.validator.GenericAxiomKeyValidator
+RelationShipId--body.request.communicationInformation.communicationVariables.variable--Mandatory
+RelationShipType--body.request.communicationInformation.communicationVariables.variable--Default Value :1001
+CommunRcpntEmailAddrTxt--body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.electronicAddress.emailID--Mandatory
+
+ Json Output 
+------------------ 
+{
+  "lob" : "BOL",
+  "feeder" : "BOL",
+  "template" : "BOLENBOLBBD0002",
+  "variables" : [ {
+    "mapping" : "body.request.communicationInformation.templateID",
+    "className" : "com.aexp.gcs.schema.sendcorr.CommunicationInformationType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.deliveryInformation.destinationCode",
+    "className" : "com.aexp.gcs.schema.sendcorr.DeliveryInformationType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.requestDate",
+    "className" : "com.aexp.gcs.schema.sendcorr.CommunicationInformationType",
+    "validations" : [ {
+      "elements" : { }
+    }, {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.feederDetails.feederSystemID",
+    "className" : "com.aexp.gcs.schema.sendcorr.FeederDetailsType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.communicationTrackingID",
+    "className" : "com.aexp.gcs.schema.sendcorr.CommunicationInformationType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.communicationVariables.variable",
+    "className" : "com.aexp.gcs.schema.sendcorr.VariableType",
+    "validations" : [ {
+      "elements" : { }
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.communicationVariables.variable",
+    "className" : "com.aexp.gcs.schema.sendcorr.VariableType",
+    "validations" : [ {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  }, {
+    "mapping" : "body.request.communicationInformation.customerPII.recipientContactDetails.contactDetails.electronicAddress.emailID",
+    "className" : "com.aexp.gcs.schema.sendcorr.ElectronicAddressType",
+    "validations" : [ {
+      "elements" : { }
+    }, {
+      "validator" : "javax.validation.constraints.NotNull"
+    } ]
+  } ]
+}

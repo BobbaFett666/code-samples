@@ -1,0 +1,23 @@
+Potential input Variables 
+------------------------------- 
+FirstName
+LastName
+TimeZone
+SpecialistFirstName
+SpecialistLastName
+Time
+Month
+Date
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId--Envelope.Body.Request.CommunicationInformation.TemplateID--com.americanexpress.commutil.validator.BasicValidator
+ReqCommunId--Envelope.Body.Request.CommunicationInformation.TemplateID--Max Length Constraint :15
+CommunRtrvId--Envelope.Body.Request.CommunicationInformation.CommunicationTrackingID--com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd--Envelope.Body.Request.DeliveryInformation.DestinationCode--com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt--Envelope.Body.Request.CustomerPII.RecipientContactDetails.ContactDetails.ElectronicAddress.EmailID--com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt--Envelope.Body.Request.CustomerPII.RecipientContactDetails.ContactDetails.ElectronicAddress.EmailID--com.americanexpress.commutil.validator.BasicValidator
+AccountNumber:static--Envelope.Body.Request.CustomerPII.ReferenceNumber--com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+CardEndingDigits:static--Envelope.Body.Request.CustomerPII.RelationShipTypeCode--com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
+Date:static-- Envelope.Body.Request.CommunicationInformation.requestDate--com.americanexpress.commutil.validator.BasicValidator

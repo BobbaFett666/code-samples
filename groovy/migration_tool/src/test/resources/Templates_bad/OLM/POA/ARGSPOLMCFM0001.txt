@@ -1,0 +1,23 @@
+Potential input Variables 
+------------------------------- 
+CommunRcpntEmailAddrTxt
+RequestType
+ConfirmationNo
+
+
+Following are the Rules 
+------------------------------- 
+CommunLangDesc:com.americanexpress.commutil.validator.BasicValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+AlrtProdDesc:com.americanexpress.commutil.validator.BasicValidator
+FirstNm:com.americanexpress.commutil.validator.BasicValidator
+LastNm:com.americanexpress.commutil.validator.BasicValidator
+PvtGlobalUserId:com.americanexpress.commutil.validator.BasicValidator
+ConfirmationNo:com.americanexpress.commutil.validator.BasicValidator
+RequestType:com.americanexpress.commutil.validator.BasicValidator
+EMCopyrightYear:com.americanexpress.commutil.validator.SystemDateValidator 

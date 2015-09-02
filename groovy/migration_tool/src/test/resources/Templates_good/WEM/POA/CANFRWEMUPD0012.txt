@@ -1,0 +1,36 @@
+Potential input Variables 
+------------------------------- 
+OldAddressFirstLine
+CommunRcpntAddrLineTxt1
+CommunRcpnt1stNm
+CMName
+CommunRcpntLstNm
+NewPhoneNumber
+CommunRcpntEmailAddrTxt
+CommunLangDesc
+NewEmailAddress
+VSAMKEY
+Today
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.ActiveDateValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+CMName:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.RelationshipIdValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+CommunLangDesc:com.americanexpress.commutil.validator.BasicValidator
+CommunReqSystemId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+EMAIL_REL_TYPE:com.americanexpress.commutil.validator.RelTypeValidator
+ThresholdAmt:com.americanexpress.commutil.validator.BasicValidator
+AsOfDate:com.americanexpress.commutil.validator.BasicValidator
+CardEndingDigits:com.americanexpress.commutil.validator.NumValidator
+Axiomkey:com.americanexpress.commutil.validator.GenericAxiomKeyValidator
+AccountEndingDigits:com.americanexpress.commutil.validator.AccountEndingDigitsValidator
+Today:com.americanexpress.commutil.validator.TodayValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator

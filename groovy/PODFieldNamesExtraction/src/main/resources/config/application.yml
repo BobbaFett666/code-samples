@@ -1,0 +1,6 @@
+spring:
+   entityManager:
+      packagesToScan: com.aexp.gcs.pod.tools.fieldextraction
+   application:
+      sourceFolder: C:/development/documents/90Templates/Templates
+      outputFile: C:/development/documents/90Templates/POD-fields.json

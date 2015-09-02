@@ -1,0 +1,20 @@
+Potential input Variables 
+------------------------------- 
+NgopenAmt
+CommunRcpntEmailAddrTxt
+
+
+Following are the Rules 
+------------------------------- 
+CommunLangDesc:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+CMAccountNumber:com.americanexpress.commutil.validator.RelationshipIdValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+Axiomkey:com.americanexpress.commutil.validator.ALEAxiomKeyValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+NgopenAmt:com.americanexpress.commutil.validator.BasicValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+AccountEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator

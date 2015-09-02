@@ -1,0 +1,67 @@
+Index: build.gradle
+===================================================================
+--- build.gradle	(revision 3515)
++++ build.gradle	(working copy)
+@@ -1,3 +1,5 @@
++import groovy.io.FileType
++
+ description = """This SpringBoot app takes Kapil's template migration tool output and 
+ after verifying all files are in place starts copying (if required) the generated files 
+ to their corresponding locations in the GCS source code, creating the modules if necesary.
+@@ -45,6 +47,7 @@
+ 	testCompile 'org.springframework.boot:spring-boot-starter-test:1.2.3.RELEASE'
+ 	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+ 	testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
++	testCompile 'cglib:cglib:3.1'
+ 	testCompile 'junit:junit:4.12'
+ }
+ 
+@@ -59,3 +62,27 @@
+ 	}
+ }
+ 
++task resetTest0522Data {
++	group	=  'custom'
++	description = 'Custom task that resets files and folders specifically for running the first cut of Static Variables update functionality. Do not merge into SVN'
++	
++	doLast {
++		def baseFolder = 'C:/development/projects/migration_tool_itest'
++		
++		new File("${baseFolder}/ValidationMessages.properties").withWriter{ it << new File("${baseFolder}/ORIGINAL_ValidationMessages.properties").text }
++		
++		project.delete("${baseFolder}/Migration/business-rules-bol", 
++						"${baseFolder}/template-transaction-info/src/main/resources/transactionInfo/BOL")
++		new File("${baseFolder}/business-rules/src/main/resources/META-INF").eachFileMatch(FileType.FILES, ~/.*?\.xml/) { it.delete() }
++		
++		project.copy{
++			into("${baseFolder}/business-rules/src/main/resources/META-INF")
++			
++			from("${baseFolder}/business-rules/src/main/resources/META-INF/originals") {
++				exclude("ORIGINAL*.xml")
++				include("*.xml")
++			}
++		}		
++	}
++}
++
+Index: src/main/resources/config/application.yml
+===================================================================
+--- src/main/resources/config/application.yml	(revision 3515)
++++ src/main/resources/config/application.yml	(working copy)
+@@ -2,9 +2,9 @@
+    entityManager:
+       packagesToScan: com.aexp.gcs.pod.tools.templatemigration
+    application:
+-      sourceFolder: C:/development/documents/90Templates/Templates
+-      baseOutputFolder: C:/development/examples/Migration
+-      templateTransactionInfo: C:/development/examples/template-transaction-info
++      sourceFolder: C:/development/projects/migration_tool_itest/Templates_0522
++      baseOutputFolder: C:/development/projects/migration_tool_itest/Migration
++      templateTransactionInfo: C:/development/projects/migration_tool_itest/template-transaction-info
+       objectModelLocation: C:/development/examples/object-model
+-      validationMessagesFile: C:/development/projects/migration_tool/src/test/resources/ValidationMessages.properties
+-      beanConstraintsFolder: C:/development/examples/business-rules/src/main/resources/META-INF
+\ No newline at end of file
++      validationMessagesFile: C:/development/projects/migration_tool_itest/ValidationMessages.properties
++      beanConstraintsFolder: C:/development/projects/migration_tool_itest/business-rules/src/main/resources/META-INF
+\ No newline at end of file

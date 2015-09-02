@@ -1,0 +1,21 @@
+Potential input Variables 
+------------------------------- 
+VSAMKEY
+
+
+Following are the Rules 
+------------------------------- 
+CommunLangDesc:com.americanexpress.commutil.validator.BasicValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CMAccountNumber:com.americanexpress.commutil.validator.RelationshipIdValidator
+CMAccountNumber:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+Axiomkey:com.americanexpress.commutil.validator.GenericAxiomKeyValidator
+PaymentDt:com.americanexpress.commutil.validator.DateValidator
+ProductName:com.americanexpress.commutil.validator.BasicValidator
+AccountEndingDigits:com.americanexpress.commutil.validator.AccountEndingDigitsValidator
+CommunRcpntFullNm:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntFullNm:com.americanexpress.commutil.formatter.CustNameFormatter
+EMCopyRightYear:com.americanexpress.commutil.validator.SystemDateValidator 

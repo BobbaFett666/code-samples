@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }    
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'maven'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-integration'
+ 
+ 	/*
+ 		//	There get automatically pulled in by the starter-integration   
+    compile 'org.springframework.integration:spring-integration-core'
+    compile 'org.springframework.integration:spring-integration-stream'
+    */
+
+	compile 'org.slf4j:slf4j-api:1.7.7'
+    testCompile 'junit:junit:4.12'
+}
+
+
+task getPom << {
+    pom {
+        project {
+            groupId 'com.example'
+            artifactId 'boot-integrator-test'
+            version '0.0.1'
+        }
+    }.writeTo('pom.xml')
+}

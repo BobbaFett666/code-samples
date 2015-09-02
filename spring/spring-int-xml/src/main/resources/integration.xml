@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:int-stream="http://www.springframework.org/schema/integration/stream"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration
+		http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/stream
+		http://www.springframework.org/schema/integration/stream/spring-integration-stream.xsd">
+		
+	<int:logging-channel-adapter id="logger" log-full-message="true" level="INFO" />
+
+	<int:gateway id="shop" service-interface="com.example.bootintegrator.service.ShopGateway"/>
+	
+	<int:channel id="ordersChannel"/>
+	
+	<int:splitter input-channel="ordersChannel" ref="orderSplitter" output-channel="orderItemsChannel"/>
+	<bean id="orderSplitter" class="com.example.bootintegrator.service.OrderSplitter"/>
+	
+	<int:channel id="orderItemsChannel">
+		<int:interceptors>
+			<int:wire-tap channel="logger" />
+		</int:interceptors>
+	</int:channel>
+	
+	<int:router input-channel="orderItemsChannel" ref="orderItemRouter" method="routeOrder"/>
+	<bean id="orderItemRouter" class="com.example.bootintegrator.service.OrderItemRouter"/>
+	
+	<int:channel id="bookItemChannel"/>
+	<int:service-activator input-channel="bookItemChannel" ref="shopKeeperActivator" 
+		method="processBooks" output-channel="processedItemsChannel"/>
+	
+	<int:channel id="musicItemChannel"/>
+	<int:service-activator input-channel="musicItemChannel" ref="shopKeeperActivator" 
+		method="processMusicCDs" output-channel="processedItemsChannel"/>
+	
+	<int:channel id="softwareItemChannel"/>
+	<int:service-activator input-channel="softwareItemChannel" ref="shopKeeperActivator" 
+		method="processSoftware" output-channel="processedItemsChannel"/>
+	
+	<bean id="shopKeeperActivator" class="com.example.bootintegrator.service.ShopKeeperActivator"/>
+	
+	<int:channel id="processedItemsChannel"/>
+	
+	<int:aggregator input-channel="processedItemsChannel" ref="orderAggregator" 
+		method="prepareDelivery" output-channel="deliveriesChannel" />
+	<bean id="orderAggregator" class="com.example.bootintegrator.service.OrderAggregator" />
+	
+	<int-stream:stdout-channel-adapter id="deliveriesChannel" />	
+	
+</beans>

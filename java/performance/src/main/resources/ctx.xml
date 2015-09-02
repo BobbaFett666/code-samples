@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-file="http://www.springframework.org/schema/integration/file"
+	xmlns:int-ws="http://www.springframework.org/schema/integration/ws"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/ws http://www.springframework.org/schema/integration/ws/spring-integration-ws.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<task:executor id="executor" pool-size="8000" queue-capacity="10000"/>
+	<context:property-placeholder/>
+	<int-file:inbound-channel-adapter id="inboundChannel" directory="${dir:input}" channel="fileChannel" filename-pattern="${filename:input.xml}" prevent-duplicates="false">
+		<int:poller fixed-rate="${rate:100}" task-executor="executor" error-channel="errorChannel" time-unit="MILLISECONDS" max-messages-per-poll="${msgpp:1}"/>
+	</int-file:inbound-channel-adapter>
+	<int-file:file-to-string-transformer input-channel="fileChannel" output-channel="rawChannel"/>
+	<int:header-enricher input-channel="rawChannel" output-channel="wsOutChannel">
+		<int:header name="start" expression="T(java.lang.System).currentTimeMillis()"/>
+	</int:header-enricher>
+	<int-ws:outbound-gateway id="wsOut" interceptor="wss4j" request-channel="wsOutChannel" reply-channel="responseChannel" uri="${ws.url}"/>
+	<int:transformer input-channel="responseChannel" output-channel="reportChannel" expression="@statistics.add(T(java.lang.System).currentTimeMillis()-headers.start)"/>
+	<int:channel id="reportChannel"/>
+	<int:logging-channel-adapter channel="reportChannel" level="INFO" logger-name="stats"/>
+	
+	<int:logging-channel-adapter channel="errorChannel" log-full-message="true" level="ERROR" logger-name="errorLog"/>
+	
+	<bean id="statistics" class="com.aexp.gcs.performance.Statistics"/>
+	<bean id="wss4j" class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+		<property name="securementActions" value="Signature"/>
+		<property name="secureRequest" value="true"/>
+		<property name="securementUsername" value="pegagcspublic"/>
+		<property name="securementPassword" value="PEGA@123"/>
+		<property name="securementSignatureCrypto">
+			<bean class="org.springframework.ws.soap.security.wss4j.support.CryptoFactoryBean">
+				<property name="keyStoreType" value="jks"/>
+				<property name="keyStoreLocation" value="classpath:GCSPEGA.jks"/>
+				<property name="keyStorePassword" value="PEGA@123"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,27 @@
+Potential input Variables 
+------------------------------- 
+CommunRcpntFullNm
+
+
+Following are the Rules 
+------------------------------- 
+CommunReqSystemId:com.americanexpress.commutil.validator.BasicValidator
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.ActiveDateValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+CommunLangDesc:com.americanexpress.commutil.validator.LanguageValidator
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+AxiomKey:com.americanexpress.commutil.validator.GenericAxiomKeyValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.EmailDomainValidator
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntFullNm:com.americanexpress.commutil.formatter.CustNameFormatter
+CommunRcpntAddrStateCd:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntAddrStateCd:com.americanexpress.commutil.formatter.UpperCaseFormatter
+CommunRcpntAddrPostCd:com.americanexpress.commutil.formatter.ZipCodeFormatter
+CommunRcpntAddrLineTxt1:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntAddrLineTxt1:com.americanexpress.commutil.formatter.CustAddressLnFormatter
+CommunRcpntAddrLineTxt2:com.americanexpress.commutil.validator.BasicValidator
+CommunRcpntAddrLineTxt2:com.americanexpress.commutil.formatter.CustAddressLnFormatter
+AccountId:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator

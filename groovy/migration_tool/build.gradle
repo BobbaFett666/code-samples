@@ -1,0 +1,116 @@
+import groovy.io.FileType
+
+description = """This SpringBoot app takes Kapil's template migration tool output and 
+after verifying all files are in place starts copying (if required) the generated files 
+to their corresponding locations in the GCS source code, creating the modules if necesary.
+Also will edit the validate.feeder.xxxx.java file in order to add missing method signatures."""
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+		jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+	}
+}
+
+apply plugin: 'application'
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+apply plugin: 'maven'
+
+defaultTasks 'clean', 'assemble'
+
+mainClassName = 'com.aexp.gcs.pod.tools.templatemigration.Application'
+
+ext {
+	sourceDir = 'src/main/groovy'
+	testSourceDir = 'src/test/groovy'
+}
+
+jar {
+	baseName = 'migration_tool'
+	version = '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter:1.2.3.RELEASE'
+	compile 'org.codehaus.groovy:groovy-all:2.4.0'
+	compile 'org.slf4j:slf4j-api:1.7.7'
+	
+	testCompile 'org.springframework.boot:spring-boot-starter-test:1.2.3.RELEASE'
+	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+	testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+	testCompile 'cglib:cglib:3.1'
+	testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+	main {
+		java.srcDirs = []
+		groovy.srcDirs = [sourceDir]
+	}
+	test {
+		java.srcDirs = []
+		groovy.srcDirs = [testSourceDir]
+	}
+}
+
+task resetTest0522Data {
+	group	=  'custom'
+	description = 'Custom task that resets files and folders specifically for running the first cut of Static Variables update functionality. Do not merge into SVN'
+	
+	doLast {
+		def baseFolder = 'C:/development/projects/migration_tool_itest'
+		
+		new File("${baseFolder}/ValidationMessages.properties").withWriter{ it << new File("${baseFolder}/ORIGINAL_ValidationMessages.properties").text }
+		
+		project.delete("${baseFolder}/Migration/business-rules-bol", 
+						"${baseFolder}/template-transaction-info/src/main/resources/transactionInfo/BOL")
+		new File("${baseFolder}/business-rules/src/main/resources/META-INF").eachFileMatch(FileType.FILES, ~/.*?\.xml/) { it.delete() }
+		
+		project.copy{
+			into("${baseFolder}/business-rules/src/main/resources/META-INF")
+			
+			from("${baseFolder}/business-rules/src/main/resources/META-INF/originals") {
+				exclude("ORIGINAL*.xml")
+				include("*.xml")
+			}
+		}		
+	}
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.2.1'
+}
+
+task getPom << {
+	pom {
+		project {
+			groupId 'com.aexp.gcs.pod.tools'
+			artifactId 'migration_tool'
+			version '0.0.1'
+		}
+	}.writeTo('pom.xml')
+}
+
+task makeBatFile << {
+	File libsDir = new File("${buildDir}/libs")
+	if (!libsDir.exists()) {
+		libsDir.mkdirs()
+	}
+
+	def batFile = new File("${buildDir}/libs/runMigrationTool.bat")
+	batFile.withWriter{
+		it << "java -jar ${jar.baseName}-${jar.version}.jar --spring.config.location=%1"
+	}
+}
+
+assemble.finalizedBy makeBatFile

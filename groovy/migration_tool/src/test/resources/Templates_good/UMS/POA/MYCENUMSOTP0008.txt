@@ -1,0 +1,26 @@
+Potential input Variables 
+------------------------------- 
+CMName
+OneTimePwd
+
+
+Following are the Rules 
+------------------------------- 
+ReqCommunId:com.americanexpress.commutil.validator.BasicValidator
+CommunDestLocCd:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.validator.ActiveDateValidator
+CommunReqDt:com.americanexpress.commutil.validator.BasicValidator
+CommunReqDt:com.americanexpress.commutil.formatter.EffDateFormatter
+CommunLangDesc:com.americanexpress.commutil.validator.TemplateToLanguageCodeValidator
+CommunReqSystemId:com.americanexpress.commutil.validator.BasicValidator
+CommunRtrvId:com.americanexpress.commutil.validator.BasicValidator
+TransactionDate:com.americanexpress.commutil.validator.BasicValidator
+OneTimePwd:com.americanexpress.commutil.validator.BasicValidator
+CMName:com.americanexpress.commutil.validator.BasicValidator
+CMName:com.americanexpress.commutil.formatter.CustNameFormatter
+FooterYear:com.americanexpress.commutil.validator.SystemDateValidator 
+CommunRcpntEmailAddrTxt:com.americanexpress.commutil.validator.BasicValidator
+RelationShipType:com.americanexpress.commutil.validator.RelTypeValidator
+AxiomKey:com.americanexpress.commutil.validator.BasicValidator
+RelationShipId:com.americanexpress.commutil.validator.BasicValidator
+AccountEndingDigits:com.americanexpress.commutil.validator.CustAcctEndingDigitsValidator
